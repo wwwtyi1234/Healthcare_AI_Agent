@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import streamlit as st
 from dotenv import load_dotenv
@@ -15,8 +16,7 @@ if not api_key:
     st.error("尚未設定 GROQ_API_KEY。請在專案資料夾建立 .env，並填入 Groq API Key。")
     st.stop()
 
-client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
-
+client = OpenAI(api_key=str(api_key).encode('ascii', 'ignore').decode('ascii'), base_url="https://api.groq.com/openai/v1")
 SYSTEM_PROMPT = """
 你是醫療機構門診行政資訊助理。
 目前沒有連接醫院官方資料庫，因此不得假裝知道特定醫院的最新規定、費用、時間、電話或地址。
