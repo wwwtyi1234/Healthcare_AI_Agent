@@ -9,7 +9,7 @@ st.set_page_config(page_title="Healthcare AI Agent", page_icon="🏥")
 st.title("🏥 醫療門診行政資訊 AI 助理")
 st.caption("開發階段 1：基本問答介面。尚未連接醫院官方資料庫，也不提供診斷或治療建議。")
 
-api_key = os.getenv("GROQ_API_KEY", "").strip()
+api_key = "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"
 model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
 
 if not api_key:
