@@ -20,7 +20,7 @@ st.caption(
 
 # 直接設定金鑰與模型，確保雲端 100% 順利執行
 api_key = "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"
-model = "llama-3.1-8b-instant"
+model = "llama-3.1-70b-versatile"
 if not api_key:
     st.error("找不到 Groq API Key，請檢查設定。")
     st.stop()
