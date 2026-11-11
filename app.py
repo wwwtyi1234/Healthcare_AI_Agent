@@ -18,13 +18,9 @@ st.caption(
     "開發階段 1：基本 LLM 問答介面"
 )
 
-# 從 .env 讀取 API Key
-raw_key = os.getenv("GROQ_API_KEY", "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")
-api_key = str(raw_key).encode("ascii", "ignore").decode("ascii").strip()
-
-model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
-
-# 檢查 API 密鑰
+# 直接設定金鑰與模型，確保雲端 100% 順利執行
+api_key = "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"
+model = "llama-3.3-70b-versatile"
 if not api_key:
     st.error("找不到 Groq API Key，請檢查 .env 設定。")
     st.stop()
