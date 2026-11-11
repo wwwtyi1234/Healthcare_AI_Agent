@@ -19,14 +19,12 @@ st.caption(
 )
 
 # 從 .env 讀取 API Key
-取並強制過濾非 ASCII 字符，避免雲端編碼崩潰
 raw_key = os.getenv("GROQ_API_KEY", "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")
 api_key = str(raw_key).encode("ascii", "ignore").decode("ascii").strip()
 
 model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
-).strip()
 
-# 檢查 API Key
+# 檢查 API 密鑰
 if not api_key:
     st.error("找不到 Groq API Key，請檢查 .env 設定。")
     st.stop()
@@ -36,7 +34,6 @@ client = OpenAI(
     api_key=api_key,
     base_url="https://api.groq.com/openai/v1"
 )
-
 SYSTEM_PROMPT = """
 你是醫療機構門診行政資訊助理。
 
