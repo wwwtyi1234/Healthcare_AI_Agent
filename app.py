@@ -22,7 +22,7 @@ st.caption(
 api_key = "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"
 model = "llama-3.3-70b-versatile"
 if not api_key:
-    st.error("找不到 Groq API Key，請檢查 .env 設定。")
+    st.error("找不到 Groq API Key，請檢查設定。")
     st.stop()
 
 # 建立 Groq API 連線
