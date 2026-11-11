@@ -19,11 +19,11 @@ st.caption(
 )
 
 # 從 .env 讀取 API Key
-api_key = os.getenv("GROQ_API_KEY", "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").strip()
+取並強制過濾非 ASCII 字符，避免雲端編碼崩潰
+raw_key = os.getenv("GROQ_API_KEY", "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")
+api_key = str(raw_key).encode("ascii", "ignore").decode("ascii").strip()
 
-model = os.getenv(
-    "GROQ_MODEL",
-    "llama-3.3-70b-versatile"
+model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
 ).strip()
 
 # 檢查 API Key
